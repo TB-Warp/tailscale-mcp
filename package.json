@@ -1,7 +1,7 @@
 {
   "name": "tailscale-mcp",
   "version": "1.0.0",
-  "description": "Model Context Protocol server for Tailscale management",
+  "description": "Comprehensive Model Context Protocol server for Tailscale management in Warp terminal",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,18 @@
     "dev": "node --watch src/index.js",
     "test": "node test-setup.cjs"
   },
-  "keywords": ["mcp", "tailscale", "vpn", "network"],
+  "keywords": [
+    "mcp",
+    "tailscale", 
+    "vpn",
+    "network",
+    "warp",
+    "terminal",
+    "model-context-protocol",
+    "device-management",
+    "acl",
+    "dns"
+  ],
   "author": "TB-Warp Team",
   "license": "MIT",
   "repository": {

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "tailscale": {
+      "command": "node",
+      "args": ["./src/index.js"],
+      "env": {
+        "TAILSCALE_TOKEN": "{{TAILSCALE_TOKEN}}",
+        "TAILNET": "{{TAILNET}}"
+      }
+    }
+  }
+}
