@@ -47,7 +47,26 @@ This MCP server provides complete Tailscale network management capabilities dire
 
 ## 🛠 Installation
 
-### Quick Setup
+### 🍺 Homebrew Installation (Recommended)
+
+**One-line installation:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/TB-Warp/tailscale-mcp/main/scripts/install.sh | bash
+```
+
+**Or manually:**
+```bash
+# Add the tap
+brew tap tb-warp/tailscale-mcp https://github.com/TB-Warp/tailscale-mcp
+
+# Install tailscale-mcp
+brew install tailscale-mcp
+
+# Run setup
+tailscale-mcp-setup
+```
+
+### 🐙 Manual Installation
 
 1. **Clone the repository**:
    ```bash
@@ -65,15 +84,36 @@ This MCP server provides complete Tailscale network management capabilities dire
    npm test
    ```
 
-4. **Get your Tailscale API token**:
-   - Visit [Tailscale Admin Console](https://login.tailscale.com/admin/settings/keys)
-   - Click "Generate API key"
-   - Select appropriate permissions (recommend: "All" for full functionality)
-   - Copy the generated token
+### 🔑 Get Your Tailscale API Token
+
+- Visit [Tailscale Admin Console](https://login.tailscale.com/admin/settings/keys)
+- Click "Generate API key"
+- Select appropriate permissions (recommend: "All" for full functionality)
+- Copy the generated token
 
 ## ⚙️ Warp Configuration
 
-Add the following to your Warp MCP configuration file:
+### 🍺 With Homebrew Installation
+
+Add this to your Warp MCP configuration file:
+
+```json
+{
+  "mcpServers": {
+    "tailscale": {
+      "command": "tailscale-mcp",
+      "env": {
+        "TAILSCALE_TOKEN": "tskey-api-xxxxx-your-actual-token-here",
+        "TAILNET": "your-tailnet-name"
+      }
+    }
+  }
+}
+```
+
+### 🐙 With Manual Installation
+
+Add this to your Warp MCP configuration file:
 
 ```json
 {
@@ -90,7 +130,7 @@ Add the following to your Warp MCP configuration file:
 }
 ```
 
-**Important**: Use absolute paths and replace placeholders with your actual values.
+**Important**: Replace placeholders with your actual values.
 
 ## 🎯 Usage Examples
 
@@ -160,6 +200,41 @@ Once configured, use natural language commands in Warp:
 1. **Validate installation**: `npm test`
 2. **Test with token**: `TAILSCALE_TOKEN="your_token" node src/index.js`
 3. **Check Warp logs** for MCP-related errors
+
+## 🔄 Updating
+
+### 🍺 Homebrew Update
+```bash
+brew upgrade tailscale-mcp
+```
+
+### 🐙 Manual Update
+```bash
+cd /path/to/tailscale-mcp
+git pull origin main
+npm install
+```
+
+## 🗑️ Uninstalling
+
+### 🍺 Homebrew Uninstall
+```bash
+# Quick uninstall
+curl -fsSL https://raw.githubusercontent.com/TB-Warp/tailscale-mcp/main/scripts/uninstall.sh | bash
+
+# Or manually
+brew uninstall tailscale-mcp
+brew untap tb-warp/tailscale-mcp
+```
+
+### 🐙 Manual Uninstall
+```bash
+# Remove the cloned directory
+rm -rf /path/to/tailscale-mcp
+
+# Remove from Warp MCP configuration
+# (edit your MCP config file manually)
+```
 
 ## 🤝 Contributing
 
