@@ -1,0 +1,33 @@
+{
+  "name": "tailscale-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server for Tailscale management",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node test-setup.cjs"
+  },
+  "keywords": ["mcp", "tailscale", "vpn", "network"],
+  "author": "TB-Warp Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TB-Warp/tailscale-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TB-Warp/tailscale-mcp/issues"
+  },
+  "homepage": "https://github.com/TB-Warp/tailscale-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
