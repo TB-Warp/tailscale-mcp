@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "tailscale": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/tailscale-mcp/src/index.js"
+      ],
+      "working_directory": "/absolute/path/to/tailscale-mcp"
+    }
+  }
+}

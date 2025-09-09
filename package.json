@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Comprehensive Model Context Protocol server for Tailscale management in Warp terminal",
   "main": "src/index.js",
+  "bin": {
+    "tailscale-mcp": "./bin/tailscale-mcp"
+  },
   "type": "module",
   "scripts": {
     "start": "node src/index.js",

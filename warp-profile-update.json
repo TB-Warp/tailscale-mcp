@@ -1,0 +1,9 @@
+{
+  "tailscale": {
+    "command": "node",
+    "args": [
+      "/Users/lpm/Repo/tailscale-mcp/src/index.js"
+    ],
+    "working_directory": "/Users/lpm/Repo/tailscale-mcp"
+  }
+}
